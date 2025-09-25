@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-principal);
+}
+
+body {
+  margin: 0; 
+  padding: 0;
+  min-height: 100vh; 
+  /* tava usando o svg mass tava demorando mt carregar - testar dps pra ver melhorrrrr*/
+  background-image: url('/assets/img/layout\ .png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1, h2, p {
+  color: var(--cor-branca);  margin-top: 70px;
+}
+
+span {
+  color: var(--cor-primaria);
+}
+
+.error-links {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.error-links a {
+  padding: 10px 20px;
+  color: var(--cor-branca);
+  background-color: var(--cor-primaria); 
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section {
+  margin: 30px auto; 
+  max-width: 800px; 
+  width: 90%;
+  padding: 0 10px; 
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .error-links {
+    gap: 15px;
+  }
+  .error-links a {
+    padding: 8px 16px;
+  }
+}

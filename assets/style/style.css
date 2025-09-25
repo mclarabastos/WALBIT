@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{
+  --font-principal: 'Poppins', sans-serif;
+  --cor-primaria: #fc9e00;
+  --cor-secundaria: #ffffff;
+  --cor-background: #000000;
+  --cor-branca: #ffffff;
+  --cor-preta: #000000;
+  --gradiente-principal: linear-gradient(90deg, #4b27ff, #f95aff, #ffa100, #ffc928);
+  --max-width: 1200px;
+  --navbar-height: 64px;
+}
+
+/* ===== Reset / base ===== */
+*{ margin:0; padding:0; box-sizing:border-box; font-family:var(--font-principal); }
+html,body{ height:100%; }
+body{
+  background: var(--cor-preta);
+  background-image: url("/assets/img/layout\ .png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  color: var(--cor-branca);
+  padding-top: var(--navbar-height);
+}
+
+/* ===== Header / Nav ===== */
+header{ width:100%; background: transparent; }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 12px 5%;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: 1200;
+  background: rgba(0,0,0,0.35); /* leve transparência para manter estética */
+  backdrop-filter: blur(6px);    /* opcional: deixa o fundo levemente borrado */
+}
+
+/* logo */
+#icon_wallet{ color:var(--cor-primaria); font-size:2rem; }
+.logo_text{ color:var(--cor-branca); font-size:1.6rem; font-weight:700; margin-left:8px; text-decoration:none; }
+.logo_link{ display:flex; align-items:center; text-decoration:none; }
+
+/* nav itens desktop */
+#nav-itens{
+  list-style:none;
+  display:flex;
+  gap:2.5rem; 
+  align-items:center;
+  top: var(--navbar-height);
+}
+#nav-itens li a{ color:var(--cor-branca); text-decoration:none; transition: color .2s; }
+#nav-itens li a:hover{ color:var(--cor-primaria); }
+
+/* botao login */
+#btn-login .btn{
+  background: var(--gradiente-principal);
+  color:var(--cor-branca);
+  padding:8px 32px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-size:0.95rem;
+}
+#btn-mobile i{ display:none; font-size:1.4rem; color:var(--cor-branca); cursor:pointer; }
+
+/* ===== HERO / Container home ===== */
+.container-home{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:3rem;
+  padding: 4rem 10%;
+  min-height: 100vh; /* se tiver navbar fixa, ajuste abaixo */
+  flex-direction: row-reverse; /* imagem à direita no desktop */
+  box-sizing:border-box;
+}
+
+/* conteúdo textual */
+.container-home .conteudo{
+  flex: 1 1 55%;
+  color:var(--cor-branca);
+}
+
+/* tipografia fluida */
+.container-home h1{
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height:1.03;
+  margin-bottom:1.2rem;
+  font-weight:800;
+}
+.container-home p.descr-conteudo{
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  line-height:1.8;
+  margin-bottom:1.8rem;
+  color:var(--cor-branca);
+}
+
+/* imagem */
+.container-home .img-home{
+  flex: 1 1 45%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow: visible;      /* importante: evita corte se a imagem "vazar" */
+  position: relative;
+}
+.container-home .img-home img{
+  width: clamp(240px, 45vw, 820px); /* proporcional no desktop, reduz no mobile */
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  transform-origin: center right;  /* cresce para a direita, não para cima/esquerda */
+  transform: scale(1.15);          /* aumenta 15% — ajuste 1.10 / 1.2 conforme quiser */
+  z-index: 2;                      /* garante que fique sobre o fundo, não atrás */
+  transition: transform .18s ease; 
+}
+
+/* Faixa de transição */
+.faixa-transicao{
+  width:100%;
+  background: linear-gradient(90deg,#4b27ff,#f95aff,#ffa100);
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:1rem 0;
+  overflow:hidden;
+  position:relative;
+}
+.faixa-transicao .logo_text{
+  font-size:2rem;
+  font-weight:bold;
+  color:var(--cor-branca);
+  white-space:nowrap;
+  margin:0 1rem;
+  animation: moveLeft 20s linear infinite;
+}
+
+ span{
+  color: var(--cor-primaria);
+}
+@keyframes moveLeft{ 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
+
+/* ===== Breakpoints limpos ===== */
+
+/* Large tablets / small desktops (até 1024px) */
+@media (max-width: 1024px){
+  nav{ padding: 14px 6%; }
+  #nav-itens{ gap:1.8rem; }
+
+  .container-home{
+    padding: 4rem 6%;
+    gap:2rem;
+  }
+  .container-home h1{ font-size: clamp(2.1rem, 5.5vw, 3.8rem); }
+  .container-home p.descr-conteudo{ font-size: clamp(0.95rem, 1.3vw, 1.15rem); }
+}
+
+/* Mobile (até 768px) -> EMPILHA: texto em cima, imagem abaixo */
+@media (max-width: 768px){
+  /* NAV mobile */
+  #btn-mobile i{ display:block; }
+  #nav-itens{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    background: rgba(0,0,0,0.95);
+    position: absolute;
+    top: 64px; /* ajuste conforme altura da sua navbar */
+    left:0;
+    width:100%;
+    padding: 0 18px;
+    max-height:0;
+    overflow:hidden;
+    transition: max-height .3s ease, padding .3s ease;
+    z-index:1000;
+  }
+  #nav-itens.open{
+    max-height: 400px;
+    padding: 18px;
+  }
+  #nav-itens li a{ font-size:1.05rem; }
+
+  /* HERO: empilha verticalmente e força ordem */
+  .container-home{
+    flex-direction: column;
+    gap:1.5rem;
+    padding: 3.5rem 5%;
+    align-items:center;
+    min-height: auto; /* deixa a altura natural no mobile */
+  }
+  .container-home .conteudo{ order:1; width:100%; text-align:center; }
+  .container-home .img-home{ order:2; width:100; }
+
+  .container-home h1{ font-size: clamp(1.6rem, 8.5vw, 2.6rem); line-height:1.06; }
+  .container-home p.descr-conteudo{ font-size: clamp(0.95rem, 3.8vw, 1.05rem); }
+
+  .container-home .img-home img{ width: clamp(180px, 70vw, 420px); }
+
+  .faixa-transicao{ padding:1.2rem 0; }
+  .faixa-transicao .logo_text{ font-size:1.4rem; }
+
+  /* background fix pode ficar pesado em mobile -> troca para scroll */
+  body{ background-attachment: scroll; }
+}
+
+/* Pequenas telas (até 420px) */
+@media (max-width:420px){
+  nav{ padding:10px 4%; }
+  .container-home{ padding:2.5rem 4%; gap:1rem; }
+  .container-home h1{ line-height:1.08; }
+}

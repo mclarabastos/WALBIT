@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/style/style.css" />
+    <link rel="stylesheet" href="/assets/style/cadastro.css" />
+    <title>WALLBIT SING-IN</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav_bar" id="nav_logo">
+          <a href="/index.html" class="logo_link">
+            <i class="fa-solid fa-wallet" id="icon_wallet"></i>
+            <span class="logo_text"
+              >WALB<span class="highlight_I">I</span>T</span
+            >
+          </a>
+        </div>
+        <div class="nav_bar" id="btn-mobile">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="nav-itens">
+          <li><a href="/index.html">Ativos</a></li>
+          <li><a href="/index.html">Sobre Nós</a></li>
+          <li><a href="/index.html">Carteira</a></li>
+          <li><a href="/index.html">Avaliações</a></li>
+          <div class="nav_bar" id="btn-login">
+            <a href="assets/html/login.html"
+              ><button class="btn">Login</button></a
+            >
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="form-container">
+      <div class="form" id="form-header">
+        <h1 id="titulo-form">Criar Conta</h1>
+        <div id="btn-cadastro">
+          <!--<button type="reset">Limpar Campos</button>-->
+        </div>
+      </div>
+
+      <form action="" id="form">
+        <div id="input-container">
+          <div class="input-box">
+            <input
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Nome Completo"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input type="date" name="data_nascimento" id="data" required />
+          </div>
+
+          <div class="form-group">
+            <select id="genero" name="genero" required>
+              <option value="" disabled selected>Selecione o gênero</option>
+              <option value="feminino">Feminino</option>
+              <option value="masculino">Masculino</option>
+              <option value="nao-binario">Não binário</option>
+              <option value="prefiro-nao-dizer">Prefiro não dizer</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="cpf" id="cpf" placeholder="CPF" required />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="tel"
+              name="telefone"
+              id="telefone"
+              placeholder="Telefone Celular"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="cep" id="cep" placeholder="CEP" required />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="text"
+              name="logradouro"
+              id="logradouro"
+              placeholder="Endereço"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="text"
+              name="bairro"
+              id="bairro"
+              placeholder="Bairro"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="text"
+              name="estado"
+              id="estado"
+              placeholder="Estado"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="password"
+              name="senha"
+              id="senha"
+              placeholder="Senha"
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <input
+              type="password"
+              name="confirmar_senha"
+              id="confirmar_senha"
+              placeholder="Confirmar Senha"
+              required
+            />
+          </div>
+
+          <div id="btn-cadastro">
+            <button type="submit">Enviar</button>
+          </div>
+
+          <div id="form-login">
+            <p id="p-login">Já possui uma conta?</p>
+            <div id="FormBtn-login">
+              <button type="button">Fazer Login</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <script src="/assets/js/js.js"></script>
+  </body>
+</html>

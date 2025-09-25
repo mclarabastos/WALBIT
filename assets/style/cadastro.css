@@ -1,0 +1,94 @@
+body{
+    
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+
+    
+}
+
+.form, #form-container{
+  background: rgba(0, 0, 0, 0.8); /* leve transparência para mostrar a imagem de fundo */
+  border-radius: 15px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  font-family: var(--font-principal);
+  color: var(--cor-branca);
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Título do formulário acima do form */
+#titulo-form {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--cor-branca);
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Inputs e select */
+.input-box input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: #111;
+  color: var(--cor-branca);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+.form-group select:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 8px var(--cor-primaria);
+}
+
+/* Botão enviar */
+#btn-cadastro button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: var(--gradiente-principal);
+  border: none;
+  border-radius: 8px;
+  color: var(--cor-branca);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btn-cadastro button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Link para login */
+#form-login {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--cor-branca);
+}
+
+#form-login button {
+  background: none;
+  border: none;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+#form-login button:hover {
+  text-decoration: underline;
+}
